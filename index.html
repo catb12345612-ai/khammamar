@@ -3,146 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Updated Browser Tab Title -->
-    <title>Syed Zeeshaan Ali AR</title>
+    <title>Syed Zeeshaan Ali AR - Premium</title>
     
-    <!-- Tailwind CSS for styling -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Google Model Viewer -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
 
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            font-family: 'Inter', sans-serif;
-            background-color: #0f172a; 
-        }
-
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; font-family: 'Inter', sans-serif; background-color: #050505; }
+        
         #scene-container {
-            width: 100vw;
-            height: 100vh;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: #1e293b;
-            transition: background-image 0.5s ease-in-out;
+            width: 100vw; height: 100vh;
+            background-size: cover; background-position: center; background-repeat: no-repeat;
+            background-color: #111; transition: background-image 0.5s ease-in-out;
         }
 
         model-viewer {
-            width: 100%;
-            height: 100%;
-            background-color: transparent;
-            --poster-color: transparent;
-            touch-action: none;
+            width: 100%; height: 100%; background-color: transparent;
+            --poster-color: transparent; touch-action: none; outline: none;
         }
 
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
-        
+        /* Sleek Glassmorphism */
         .glass-panel {
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            background: rgba(10, 10, 10, 0.75);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
         }
+
+        /* Premium Scrollbar */
+        ::-webkit-scrollbar { width: 4px; height: 4px; }
+        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.3); border-radius: 10px; }
+
+        /* AR Dimension Tags */
+        .dim-tag {
+            background: rgba(255, 255, 255, 0.95);
+            color: #000; font-size: 12px; font-weight: 700;
+            padding: 6px 12px; border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            border: 1px solid #ddd;
+            display: none; /* Hidden by default */
+            pointer-events: none;
+        }
+        .dim-tag.visible { display: block; }
     </style>
 </head>
 <body>
 
     <div id="scene-container">
-        
-        <!-- Updated to look for EXACTLY sofa.glb -->
+        <!-- 3D Viewer Element -->
         <model-viewer 
             id="sofa-viewer" 
-            src="sofa.glb.glb"
+            src="sofa.glb" 
             camera-controls 
             auto-rotate
             shadow-intensity="2"
             shadow-softness="1"
             exposure="1">
+            
+            <!-- Dimension Hotspots (Rough generic positions) -->
+            <button slot="hotspot-width" class="dim-tag" data-position="0 0.5 0.5" data-normal="0 0 1">Width: 210cm</button>
+            <button slot="hotspot-height" class="dim-tag" data-position="0 1 0" data-normal="0 1 0">Height: 85cm</button>
+            <button slot="hotspot-depth" class="dim-tag" data-position="1 0.5 0" data-normal="1 0 0">Depth: 95cm</button>
         </model-viewer>
-
     </div>
 
-    <div class="glass-panel absolute top-6 left-6 p-6 rounded-2xl z-10 w-[340px] max-h-[90vh] overflow-y-auto">
+    <!-- Premium UI Sidebar -->
+    <div class="glass-panel absolute top-6 left-6 p-6 rounded-2xl z-10 w-[360px] max-h-[90vh] overflow-y-auto flex flex-col gap-6">
         
-        <!-- Updated Personal Branding -->
-        <h1 class="text-2xl font-bold text-white mb-6 tracking-wide">Syed Zeeshaan Ali <span class="text-blue-400">AR</span></h1>
+        <h1 class="text-2xl font-bold text-white tracking-wide">Syed Zeeshaan Ali <span class="text-blue-500">AR</span></h1>
 
-        <!-- Step 1: Upload Room Photo -->
-        <div class="mb-8">
-            <h2 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">1. Background</h2>
-            <label for="room-upload" class="cursor-pointer flex items-center justify-center gap-2 w-full bg-white/10 hover:bg-white/20 border border-white/10 text-white text-sm font-medium py-3 px-4 rounded-xl transition-all duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                Upload Room Photo
+        <!-- 1. Background Upload -->
+        <div>
+            <h2 class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">1. Room Photo</h2>
+            <label for="room-upload" class="cursor-pointer flex items-center justify-center gap-2 w-full bg-white/5 hover:bg-white/10 border border-white/10 text-white text-sm py-3 px-4 rounded-xl transition-all">
+                Upload Background
             </label>
             <input id="room-upload" type="file" accept="image/*" class="hidden" onchange="handleRoomUpload(event)">
         </div>
 
-        <!-- Step 2: 24-Color Palette -->
-        <div class="mb-6">
-            <h2 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">2. Fabric Color</h2>
-            
-            <div class="grid grid-cols-6 gap-3">
-                <!-- Neutrals & Greys -->
-                <button class="w-8 h-8 rounded-full border border-white/20 shadow-inner focus:outline-none focus:ring-2 focus:ring-white transition-transform hover:scale-110" style="background-color: #ffffff;" data-color="0.95,0.95,0.95,1" onclick="changeColor(this)"></button>
-                <button class="w-8 h-8 rounded-full border border-white/20 shadow-inner focus:outline-none focus:ring-2 focus:ring-white transition-transform hover:scale-110" style="background-color: #d4d4d8;" data-color="0.7,0.7,0.7,1" onclick="changeColor(this)"></button>
-                <button class="w-8 h-8 rounded-full border border-white/20 shadow-inner focus:outline-none focus:ring-2 focus:ring-white transition-transform hover:scale-110" style="background-color: #71717a;" data-color="0.3,0.3,0.3,1" onclick="changeColor(this)"></button>
-                <button class="w-8 h-8 rounded-full border border-white/20 shadow-inner focus:outline-none focus:ring-2 focus:ring-white transition-transform hover:scale-110" style="background-color: #18181b;" data-color="0.05,0.05,0.05,1" onclick="changeColor(this)"></button>
-                <button class="w-8 h-8 rounded-full border border-white/20 shadow-inner focus:outline-none focus:ring-2 focus:ring-white transition-transform hover:scale-110" style="background-color: #f3e8ff;" data-color="0.9,0.85,0.9,1" onclick="changeColor(this)"></button>
-                <button class="w-8 h-8 rounded-full border border-white/20 shadow-inner focus:outline-none focus:ring-2 focus:ring-white transition-transform hover:scale-110" style="background-color: #fef08a;" data-color="0.9,0.8,0.2,1" onclick="changeColor(this)"></button>
-                
-                <!-- Earth & Browns -->
-                <button class="w-8 h-8 rounded-full border border-white/20 shadow-inner focus:outline-none focus:ring-2 focus:ring-white transition-transform hover:scale-110" style="background-color: #fde68a;" data-color="0.85,0.75,0.6,1" onclick="changeColor(this)"></button>
-                <button class="w-8 h-8 rounded-full border border-white/20 shadow-inner focus:outline-none focus:ring-2 focus:ring-white transition-transform hover:scale-110" style="background-color: #d97706;" data-color="0.6,0.25,0.05,1" onclick="changeColor(this)"></button>
-                <button class="w-8 h-8 rounded-full border border-white/20 shadow-inner focus:outline-none focus:ring-2 focus:ring-white transition-transform hover:scale-110" style="background-color: #92400e;" data-color="0.3,0.1,0.02,1" onclick="changeColor(this)"></button>
-                <button class="w-8 h-8 rounded-full border border-white/20 shadow-inner focus:outline-none focus:ring-2 focus:ring-white transition-transform hover:scale-110" style="background-color: #451a03;" data-color="0.1,0.02,0.01,1" onclick="changeColor(this)"></button>
-                <button class="w-8 h-8 rounded-full border border-white/20 shadow-inner focus:outline-none focus:ring-2 focus:ring-white transition-transform hover:scale-110" style="background-color: #f97316;" data-color="0.9,0.3,0.05,1" onclick="changeColor(this)"></button>
-                <button class="w-8 h-8 rounded-full border border-white/20 shadow-inner focus:outline-none focus:ring-2 focus:ring-white transition-transform hover:scale-110" style="background-color: #eab308;" data-color="0.8,0.6,0.05,1" onclick="changeColor(this)"></button>
+        <!-- 2. Furniture Selection (Horizontal Scroll) -->
+        <div>
+            <h2 class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">2. Select Furniture</h2>
+            <div class="flex gap-3 overflow-x-auto pb-2">
+                <!-- Change the names in the single quotes to match your GitHub files -->
+                <button onclick="switchModel('sofa.glb.glb')" class="whitespace-nowrap bg-blue-600 hover:bg-blue-500 text-white text-sm py-2 px-4 rounded-lg font-medium transition-all shadow-lg">Green Sofa</button>
+                <button onclick="switchModel('sofa2.glb')" class="whitespace-nowrap bg-white/10 hover:bg-white/20 text-white text-sm py-2 px-4 rounded-lg font-medium transition-all">Modern L-Shape</button>
+                <button onclick="switchModel('chair.glb')" class="whitespace-nowrap bg-white/10 hover:bg-white/20 text-white text-sm py-2 px-4 rounded-lg font-medium transition-all">Accent Chair</button>
+            </div>
+        </div>
 
-                <!-- Greens & Blues -->
-                <button class="w-8 h-8 rounded-full border border-white/20 shadow-inner focus:outline-none focus:ring-2 focus:ring-white transition-transform hover:scale-110" style="background-color: #86efac;" data-color="0.4,0.8,0.5,1" onclick="changeColor(this)"></button>
-                <button class="w-8 h-8 rounded-full border border-white/20 shadow-inner focus:outline-none focus:ring-2 focus:ring-white transition-transform hover:scale-110" style="background-color: #22c55e;" data-color="0.05,0.5,0.1,1" onclick="changeColor(this)"></button>
-                <button class="w-8 h-8 rounded-full border border-white/20 shadow-inner focus:outline-none focus:ring-2 focus:ring-white transition-transform hover:scale-110" style="background-color: #14532d;" data-color="0.02,0.15,0.05,1" onclick="changeColor(this)"></button>
-                <button class="w-8 h-8 rounded-full border border-white/20 shadow-inner focus:outline-none focus:ring-2 focus:ring-white transition-transform hover:scale-110" style="background-color: #bae6fd;" data-color="0.4,0.7,0.9,1" onclick="changeColor(this)"></button>
-                <button class="w-8 h-8 rounded-full border border-white/20 shadow-inner focus:outline-none focus:ring-2 focus:ring-white transition-transform hover:scale-110" style="background-color: #3b82f6;" data-color="0.05,0.2,0.8,1" onclick="changeColor(this)"></button>
-                <button class="w-8 h-8 rounded-full border border-white/20 shadow-inner focus:outline-none focus:ring-2 focus:ring-white transition-transform hover:scale-110" style="background-color: #1e3a8a;" data-color="0.02,0.05,0.3,1" onclick="changeColor(this)"></button>
+        <!-- 3. Feature Controls (Lock & Dimensions) -->
+        <div>
+            <h2 class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">3. Controls</h2>
+            <div class="flex gap-3">
+                <button id="lock-btn" onclick="toggleLock()" class="flex-1 bg-white/10 hover:bg-white/20 border border-white/10 text-white text-sm py-2 px-3 rounded-lg transition-all flex items-center justify-center gap-2">
+                    <span id="lock-icon">🔓</span> <span id="lock-text">Lock Position</span>
+                </button>
+                <button id="dim-btn" onclick="toggleDimensions()" class="flex-1 bg-white/10 hover:bg-white/20 border border-white/10 text-white text-sm py-2 px-3 rounded-lg transition-all">
+                    📏 Show Specs
+                </button>
+            </div>
+        </div>
 
-                <!-- Reds & Purples -->
-                <button class="w-8 h-8 rounded-full border border-white/20 shadow-inner focus:outline-none focus:ring-2 focus:ring-white transition-transform hover:scale-110" style="background-color: #fca5a5;" data-color="0.9,0.3,0.3,1" onclick="changeColor(this)"></button>
-                <button class="w-8 h-8 rounded-full border border-white/20 shadow-inner focus:outline-none focus:ring-2 focus:ring-white transition-transform hover:scale-110" style="background-color: #ef4444;" data-color="0.8,0.05,0.05,1" onclick="changeColor(this)"></button>
-                <button class="w-8 h-8 rounded-full border border-white/20 shadow-inner focus:outline-none focus:ring-2 focus:ring-white transition-transform hover:scale-110" style="background-color: #7f1d1d;" data-color="0.2,0.01,0.01,1" onclick="changeColor(this)"></button>
-                <button class="w-8 h-8 rounded-full border border-white/20 shadow-inner focus:outline-none focus:ring-2 focus:ring-white transition-transform hover:scale-110" style="background-color: #f472b6;" data-color="0.9,0.2,0.5,1" onclick="changeColor(this)"></button>
-                <button class="w-8 h-8 rounded-full border border-white/20 shadow-inner focus:outline-none focus:ring-2 focus:ring-white transition-transform hover:scale-110" style="background-color: #a855f7;" data-color="0.4,0.1,0.7,1" onclick="changeColor(this)"></button>
-                <button class="w-8 h-8 rounded-full border border-white/20 shadow-inner focus:outline-none focus:ring-2 focus:ring-white transition-transform hover:scale-110" style="background-color: #4c1d95;" data-color="0.1,0.02,0.3,1" onclick="changeColor(this)"></button>
+        <!-- 4. Fabric Color Palette -->
+        <div>
+            <h2 class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">4. Fabric Color</h2>
+            <div class="grid grid-cols-6 gap-2.5">
+                <!-- Neutrals -->
+                <button class="w-9 h-9 rounded-full border border-white/20 hover:scale-110 transition-transform" style="background: #ffffff;" data-color="0.95,0.95,0.95,1" onclick="changeColor(this)"></button>
+                <button class="w-9 h-9 rounded-full border border-white/20 hover:scale-110 transition-transform" style="background: #a1a1aa;" data-color="0.4,0.4,0.4,1" onclick="changeColor(this)"></button>
+                <button class="w-9 h-9 rounded-full border border-white/20 hover:scale-110 transition-transform" style="background: #27272a;" data-color="0.05,0.05,0.05,1" onclick="changeColor(this)"></button>
+                <!-- Browns/Leathers -->
+                <button class="w-9 h-9 rounded-full border border-white/20 hover:scale-110 transition-transform" style="background: #d97706;" data-color="0.6,0.25,0.05,1" onclick="changeColor(this)"></button>
+                <button class="w-9 h-9 rounded-full border border-white/20 hover:scale-110 transition-transform" style="background: #78350f;" data-color="0.2,0.05,0.01,1" onclick="changeColor(this)"></button>
+                <!-- Premium Colors -->
+                <button class="w-9 h-9 rounded-full border border-white/20 hover:scale-110 transition-transform" style="background: #047857;" data-color="0.01,0.2,0.05,1" onclick="changeColor(this)"></button>
+                <button class="w-9 h-9 rounded-full border border-white/20 hover:scale-110 transition-transform" style="background: #1d4ed8;" data-color="0.01,0.05,0.4,1" onclick="changeColor(this)"></button>
+                <button class="w-9 h-9 rounded-full border border-white/20 hover:scale-110 transition-transform" style="background: #9f1239;" data-color="0.3,0.01,0.02,1" onclick="changeColor(this)"></button>
+                <button class="w-9 h-9 rounded-full border border-white/20 hover:scale-110 transition-transform" style="background: #4c1d95;" data-color="0.1,0.02,0.3,1" onclick="changeColor(this)"></button>
             </div>
         </div>
     </div>
 
-    <!-- Elegant Helper Text Overlay -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 glass-panel text-white/90 px-8 py-3 rounded-full text-sm font-medium tracking-wide pointer-events-none z-10 flex items-center gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 opacity-75" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
-        </svg>
-        Drag to rotate &bull; Scroll to scale &bull; Right-click (or 2-finger drag) to move
+    <!-- Instructions Overlay -->
+    <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 glass-panel text-gray-300 px-6 py-2 rounded-full text-xs font-medium pointer-events-none z-10">
+        Drag to spin &bull; Scroll to scale &bull; Right-click to move
     </div>
 
     <script>
         const viewer = document.getElementById('sofa-viewer');
         const sceneContainer = document.getElementById('scene-container');
+        let isLocked = false;
+        let dimsVisible = false;
 
+        // Background Image Upload
         function handleRoomUpload(event) {
             const file = event.target.files[0];
             if (!file) return;
-
             const reader = new FileReader();
             reader.onload = function(e) {
                 sceneContainer.style.backgroundImage = `url('${e.target.result}')`;
@@ -150,15 +150,15 @@
             reader.readAsDataURL(file);
         }
 
+        // Switch 3D Model
+        function switchModel(filename) {
+            viewer.src = filename;
+        }
+
+        // Change Material Color safely
         function changeColor(element) {
-            if (!viewer.model) {
-                console.warn("Model is not loaded yet.");
-                return;
-            }
-            
-            const colorString = element.getAttribute("data-color");
-            const colorArray = colorString.split(',').map(Number);
-            
+            if (!viewer.model) return;
+            const colorArray = element.getAttribute("data-color").split(',').map(Number);
             try {
                 viewer.model.materials.forEach(material => {
                     if (material && material.pbrMetallicRoughness) {
@@ -167,6 +167,55 @@
                 });
             } catch (error) {
                 console.error("Error updating model color:", error);
+            }
+        }
+
+        // Lock Position (Disables Pan and Zoom, keeps Rotate)
+        function toggleLock() {
+            const btn = document.getElementById('lock-btn');
+            const icon = document.getElementById('lock-icon');
+            const text = document.getElementById('lock-text');
+            
+            isLocked = !isLocked;
+            
+            if (isLocked) {
+                viewer.setAttribute('disable-zoom', 'true');
+                viewer.setAttribute('disable-pan', 'true');
+                btn.classList.add('bg-red-500/20', 'border-red-500/50', 'text-red-400');
+                btn.classList.remove('bg-white/10', 'border-white/10', 'text-white');
+                icon.innerText = "🔒";
+                text.innerText = "Locked";
+            } else {
+                viewer.removeAttribute('disable-zoom');
+                viewer.removeAttribute('disable-pan');
+                btn.classList.remove('bg-red-500/20', 'border-red-500/50', 'text-red-400');
+                btn.classList.add('bg-white/10', 'border-white/10', 'text-white');
+                icon.innerText = "🔓";
+                text.innerText = "Lock Position";
+            }
+        }
+
+        // Toggle Dimensions visibility
+        function toggleDimensions() {
+            const tags = document.querySelectorAll('.dim-tag');
+            const btn = document.getElementById('dim-btn');
+            
+            dimsVisible = !dimsVisible;
+            
+            tags.forEach(tag => {
+                if (dimsVisible) {
+                    tag.classList.add('visible');
+                } else {
+                    tag.classList.remove('visible');
+                }
+            });
+            
+            if (dimsVisible) {
+                btn.classList.add('bg-blue-500/20', 'border-blue-500/50', 'text-blue-400');
+                btn.classList.remove('bg-white/10', 'border-white/10', 'text-white');
+            } else {
+                btn.classList.remove('bg-blue-500/20', 'border-blue-500/50', 'text-blue-400');
+                btn.classList.add('bg-white/10', 'border-white/10', 'text-white');
             }
         }
     </script>
